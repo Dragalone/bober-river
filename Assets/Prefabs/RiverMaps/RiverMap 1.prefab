@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 311706044540275557}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.659375, y: -1.03, z: -14.16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.5458, y: -1.03, z: -14.5734}
+  m_LocalScale: {x: 0.7462, y: 1, z: 0.8994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6711605063233710159}
@@ -1012,6 +1012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3444820650802510201}
   - component: {fileID: 756800963220722620}
+  - component: {fileID: 2554347911820214794}
   m_Layer: 0
   m_Name: RiverMap 1
   m_TagString: Untagged
@@ -1032,6 +1033,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1912140807285452947}
   - {fileID: 6836188440060127033}
   - {fileID: 3964477987268231105}
   - {fileID: 7897010185243038006}
@@ -1052,6 +1054,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+--- !u!65 &2554347911820214794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007129764204073212}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3685411392623570144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,8 +1526,8 @@ Transform:
   m_GameObject: {fileID: 6573829554675967132}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6, y: -1.03, z: -0.15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.7205, y: -1.03, z: 0.6836}
+  m_LocalScale: {x: 1.2053407, y: 1, z: 0.8587}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6852968757663597539}
@@ -1826,6 +1849,73 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &7962233540602915249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912140807285452947}
+  - component: {fileID: 8710897064783230966}
+  - component: {fileID: 1689789786341832400}
+  m_Layer: 0
+  m_Name: DeathZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1912140807285452947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7962233540602915249}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.51, z: -3.0100002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3444820650802510201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8710897064783230966
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7962233540602915249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 90, y: 1, z: 73}
+  m_Center: {x: -1, y: -3, z: -4}
+--- !u!114 &1689789786341832400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7962233540602915249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81df1aba769d7c459a920f6ccd97c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathZoneTag: DeathZone
 --- !u!1 &9052706599426600744
 GameObject:
   m_ObjectHideFlags: 0

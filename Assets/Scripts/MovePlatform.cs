@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovePlatform : MonoBehaviour
 {
 
-    [SerializeField] private float speed;
+    private float speed = 10;
 
     void Start()
     {

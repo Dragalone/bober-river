@@ -9,8 +9,6 @@ public class RiverMapGenerator : MonoBehaviour
 
     public List<GameObject> riverPrefabs;
     private List<GameObject> rivers = new List<GameObject>();
-    public float maxSpeed = 6;
-    private float speed = 0;
     public int maxRiverCount = 5;
     
     void Start()
@@ -21,21 +19,12 @@ public class RiverMapGenerator : MonoBehaviour
 
     private void StartLevel()
     {
-        speed = maxSpeed;
+  
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (speed ==  0)
-        {
-            return;
-        }
-
-/*       foreach (GameObject river in rivers)
-        {
-            river.transform.position -= new Vector3(0, 0, speed * Time.deltaTime);
-        }*/
 
         if (rivers[0].transform.position.z < - 30f)
         {
@@ -50,7 +39,6 @@ public class RiverMapGenerator : MonoBehaviour
 
     public void ResetLevel()
     {
-        speed = 0;
         while(rivers.Count > 0)
         {
             Destroy(rivers[0]);
