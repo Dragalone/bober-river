@@ -9,7 +9,7 @@ public class RiverMapGenerator : MonoBehaviour
 
     public List<GameObject> riverPrefabs;
     private List<GameObject> rivers = new List<GameObject>();
-    public int maxRiverCount = 5;
+    public int maxRiverCount = 10;
     
     void Start()
     {

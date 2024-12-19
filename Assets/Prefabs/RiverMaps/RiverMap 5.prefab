@@ -1406,7 +1406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a43e6a0919d1fe41b1eb283c35f41f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
 --- !u!1 &3685411392623570144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,7 +1824,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81df1aba769d7c459a920f6ccd97c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathZoneTag: DeathZone
 --- !u!1 &4420480828708485354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1878,8 +1876,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.969903, y: 2.0138884, z: 10.040414}
-  m_Center: {x: -1.292295, y: 1.0581896, z: 0.94589853}
+  m_Size: {x: 6.1797814, y: 0.47490013, z: 10.040414}
+  m_Center: {x: -1.2826056, y: 0.7108324, z: 0.94589454}
 --- !u!114 &4062223826722494519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,7 +1892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   platform: {fileID: 6374794323621539437}
-  speed: 6
 --- !u!1 &6573829554675967132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,8 +2297,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.969903, y: 2.0138884, z: 10.040414}
-  m_Center: {x: -1.292295, y: 1.0581896, z: 0.94589853}
+  m_Size: {x: 6.1810045, y: 0.64067185, z: 9.955836}
+  m_Center: {x: -1.2221422, y: 0.72493464, z: 0.90361273}
 --- !u!114 &3539560763838359506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,7 +2313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   platform: {fileID: 8316372121140929738}
-  speed: 6
 --- !u!1 &9052706599426600744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,8 +2365,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.969903, y: 2.0138884, z: 10.040414}
-  m_Center: {x: -1.292295, y: 1.0581896, z: 0.94589853}
+  m_Size: {x: 6.214726, y: 0.72097147, z: 9.916187}
+  m_Center: {x: -1.2574273, y: 0.78267485, z: 0.9237901}
 --- !u!114 &2889992893252150082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,4 +2381,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   platform: {fileID: 5467859368800659150}
-  speed: 6

@@ -715,7 +715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81df1aba769d7c459a920f6ccd97c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathZoneTag: DeathZone
 --- !u!1 &2912706455334000087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a43e6a0919d1fe41b1eb283c35f41f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
 --- !u!1 &3685411392623570144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,8 +1521,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.969903, y: 2.0138884, z: 10.040414}
-  m_Center: {x: -1.292295, y: 1.0581896, z: 0.94589853}
+  m_Size: {x: 6.130973, y: 0.72405374, z: 9.997766}
+  m_Center: {x: -1.2834716, y: 0.67794806, z: 0.9245744}
 --- !u!114 &3539560763838359506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1539,4 +1537,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   platform: {fileID: 8316372121140929738}
-  speed: 6

@@ -1012,7 +1012,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3444820650802510201}
   - component: {fileID: 756800963220722620}
-  - component: {fileID: 2554347911820214794}
   m_Layer: 0
   m_Name: RiverMap 1
   m_TagString: Untagged
@@ -1053,28 +1052,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a43e6a0919d1fe41b1eb283c35f41f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
---- !u!65 &2554347911820214794
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3007129764204073212}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3685411392623570144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,8 +1456,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.969903, y: 2.0138884, z: 10.040414}
-  m_Center: {x: -1.292295, y: 1.0581896, z: 0.94589853}
+  m_Size: {x: 6.1909976, y: 0.36319506, z: 9.963416}
+  m_Center: {x: -1.2589422, y: 0.5632488, z: 0.90739757}
 --- !u!114 &4062223826722494519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,7 +1472,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   platform: {fileID: 6374794323621539437}
-  speed: 6
 --- !u!1 &6573829554675967132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,7 +1891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81df1aba769d7c459a920f6ccd97c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathZoneTag: DeathZone
 --- !u!1 &9052706599426600744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,8 +1943,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.969903, y: 2.0138884, z: 10.040414}
-  m_Center: {x: -1.292295, y: 1.0581896, z: 0.94589853}
+  m_Size: {x: 6.234967, y: 0.57288146, z: 9.930851}
+  m_Center: {x: -1.2701398, y: 0.65253687, z: 0.8911047}
 --- !u!114 &2889992893252150082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,4 +1959,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   platform: {fileID: 5467859368800659150}
-  speed: 6
