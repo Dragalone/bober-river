@@ -8,7 +8,9 @@ public class RiverMapGenerator : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public List<GameObject> riverPrefabs;
+    public GameObject riverWallsPrefab;
     private List<GameObject> rivers = new List<GameObject>();
+    private List<GameObject> riverWalls = new List<GameObject>();
     public int maxRiverCount = 10;
     
     void Start()
@@ -44,10 +46,12 @@ public class RiverMapGenerator : MonoBehaviour
             Destroy(rivers[0]);
             rivers.RemoveAt(0);
         }
+        CreateRiverWalls();
         for (int i = 0; i < maxRiverCount; i++)
         {
             CreateNextRiver();
         }
+
     }
 
     private void CreateNextRiver()
@@ -61,6 +65,22 @@ public class RiverMapGenerator : MonoBehaviour
         GameObject  river = Instantiate(riverPrefabs[randomIndex], pos, Quaternion.identity);
         river.transform.SetParent(transform);
         rivers.Add(river);
+    }
+
+    private void CreateRiverWalls()
+    {
+
+        for (int i = 0; i < maxRiverCount; i++)
+        {
+            Vector3 pos = Vector3.zero;
+            if (riverWalls.Count > 0)
+            {
+                pos = riverWalls[riverWalls.Count - 1].transform.position + new Vector3(0, 0, 30f);
+            }
+            GameObject walls = Instantiate(riverWallsPrefab, pos, Quaternion.identity);
+            walls.transform.SetParent(transform);
+            riverWalls.Add(walls);
+        }
     }
 
 

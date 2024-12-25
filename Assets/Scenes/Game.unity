@@ -2502,6 +2502,7 @@ MonoBehaviour:
   - {fileID: 3007129764204073212, guid: 4349f10072f56d44a81aa6cbd984b874, type: 3}
   - {fileID: 3007129764204073212, guid: b2499507341bc3c4f8f37f87074eb827, type: 3}
   - {fileID: 3007129764204073212, guid: 01bb45a2c95f32740b6770bc72441579, type: 3}
+  riverWallsPrefab: {fileID: 3007129764204073212, guid: d6be8cd5bb4603842a07ea99908bd8f3, type: 3}
   maxRiverCount: 5
 --- !u!4 &1343146994
 Transform:
@@ -8439,6 +8440,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 808933794}
+    - target: {fileID: 756800963220722620, guid: bda3c2414f1bae54d80dcb7dc86854c7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1207775098856877596, guid: bda3c2414f1bae54d80dcb7dc86854c7, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -8877,7 +8882,7 @@ PrefabInstance:
       objectReference: {fileID: 1904837906}
     - target: {fileID: 4972863301898910463, guid: bda3c2414f1bae54d80dcb7dc86854c7, type: 3}
       propertyPath: m_VersionIndex
-      value: 6964
+      value: 6970
       objectReference: {fileID: 0}
     - target: {fileID: 6031698309482533051, guid: bda3c2414f1bae54d80dcb7dc86854c7, type: 3}
       propertyPath: m_Mesh
@@ -8929,7 +8934,7 @@ PrefabInstance:
       objectReference: {fileID: 648654498}
     - target: {fileID: 7785917372035040752, guid: bda3c2414f1bae54d80dcb7dc86854c7, type: 3}
       propertyPath: m_VersionIndex
-      value: 6964
+      value: 6967
       objectReference: {fileID: 0}
     - target: {fileID: 8219334235622618738, guid: bda3c2414f1bae54d80dcb7dc86854c7, type: 3}
       propertyPath: m_Mesh
