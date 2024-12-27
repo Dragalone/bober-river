@@ -7,7 +7,7 @@ public class RiverMapGenerator : MonoBehaviour
 {
     private List<GameObject> rivers = new List<GameObject>();
     private List<GameObject> riverWalls = new List<GameObject>();
-    private Vector3 buffOffset = new Vector3(1f, 1.3f, -1.4f);
+    private Vector3 buffOffset = new Vector3(0f, 1.3f, 0f);
 
     public List<GameObject> riverPrefabs;
     public GameObject riverWallsPrefab;
