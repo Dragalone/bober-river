@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class RiverMapGenerator : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private List<GameObject> rivers = new List<GameObject>();
+    private List<GameObject> riverWalls = new List<GameObject>();
+    private Vector3 buffOffset = new Vector3(1f, 1.3f, -1.4f);
 
     public List<GameObject> riverPrefabs;
     public GameObject riverWallsPrefab;
     public GameObject scoreBuffPrefab;
-    private List<GameObject> rivers = new List<GameObject>();
-    private List<GameObject> riverWalls = new List<GameObject>();
     public int maxRiverCount = 10;
-    
+
+
     void Start()
     {
         ResetLevel();
@@ -91,22 +92,22 @@ public class RiverMapGenerator : MonoBehaviour
         List<GameObject> rafts = new List<GameObject>();
         for (int i = 0; i < river.transform.childCount; i++)
         {
-            Transform raftTransform = river.transform.GetChild(i);
-            Debug.Log(raftTransform.gameObject.name);
-            //if (riverTransform.gameObject.tag == "Raft")
-           // {
+           Transform raftTransform = river.transform.GetChild(i);
+           if (raftTransform.gameObject.tag == "Raft")
+           {
                 rafts.Add(raftTransform.gameObject);
-           // }
+           }
         }
            
         for(int i = 0; i < rafts.Count; i++)
         {
             GameObject scoreBuff = null;
             if (UnityEngine.Random.Range(0, 100) > 0)
-                scoreBuff = Instantiate(scoreBuffPrefab, Vector3.zero, Quaternion.identity);
-            if (scoreBuff != null)
+                scoreBuff = Instantiate(scoreBuffPrefab, rafts[i].transform.position, Quaternion.identity);
+            if (scoreBuff != null)  
             {
-                rafts[i].transform.SetParent(scoreBuff.transform);
+                scoreBuff.transform.SetParent(rafts[i].transform, false);
+                scoreBuff.transform.position = rafts[i].transform.position + buffOffset;
             }
         }
 
