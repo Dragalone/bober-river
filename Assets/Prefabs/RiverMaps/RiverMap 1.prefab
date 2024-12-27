@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6031698309482533051}
   m_Layer: 0
   m_Name: Raft1
-  m_TagString: Untagged
+  m_TagString: Raft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 8809006829360369043}
   m_Layer: 0
   m_Name: Raft2
-  m_TagString: Untagged
+  m_TagString: Raft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

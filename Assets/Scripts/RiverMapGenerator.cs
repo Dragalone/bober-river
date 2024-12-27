@@ -9,6 +9,7 @@ public class RiverMapGenerator : MonoBehaviour
 
     public List<GameObject> riverPrefabs;
     public GameObject riverWallsPrefab;
+    public GameObject scoreBuffPrefab;
     private List<GameObject> rivers = new List<GameObject>();
     private List<GameObject> riverWalls = new List<GameObject>();
     public int maxRiverCount = 10;
@@ -56,14 +57,16 @@ public class RiverMapGenerator : MonoBehaviour
 
     private void CreateNextRiver()
     {
-        Vector3 pos = Vector3.zero;
+        Vector3 pos = new Vector3(0, 0, 30f);
         if (rivers.Count > 0)
         {
             pos = rivers[rivers.Count - 1].transform.position + new Vector3(0, 0, 30f);
         }
         int randomIndex = UnityEngine.Random.Range(0, riverPrefabs.Count);
         GameObject  river = Instantiate(riverPrefabs[randomIndex], pos, Quaternion.identity);
+        CreateScoreBuffs(river);
         river.transform.SetParent(transform);
+
         rivers.Add(river);
     }
 
@@ -83,5 +86,29 @@ public class RiverMapGenerator : MonoBehaviour
         }
     }
 
+    private void CreateScoreBuffs(GameObject river)
+    {
+        List<GameObject> rafts = new List<GameObject>();
+        for (int i = 0; i < river.transform.childCount; i++)
+        {
+            Transform raftTransform = river.transform.GetChild(i);
+            Debug.Log(raftTransform.gameObject.name);
+            //if (riverTransform.gameObject.tag == "Raft")
+           // {
+                rafts.Add(raftTransform.gameObject);
+           // }
+        }
+           
+        for(int i = 0; i < rafts.Count; i++)
+        {
+            GameObject scoreBuff = null;
+            if (UnityEngine.Random.Range(0, 100) > 0)
+                scoreBuff = Instantiate(scoreBuffPrefab, Vector3.zero, Quaternion.identity);
+            if (scoreBuff != null)
+            {
+                rafts[i].transform.SetParent(scoreBuff.transform);
+            }
+        }
 
+    }
 }
