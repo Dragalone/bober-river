@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Raft
   - DeathZone
+  - ScoreBuff
+  - JumpBuff
+  - SpeedBuff
   layers:
   - Default
   - TransparentFX

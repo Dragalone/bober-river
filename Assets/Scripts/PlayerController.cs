@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float speed;
 
+    private float initialSpeed;
+    private float initialGravityMultiplier;
+
     #endregion
     #region Variables: Rotation
 
@@ -23,7 +27,7 @@ public class PlayerController : MonoBehaviour
     #region Variables: Gravity
 
     private float _gravity = -9.81f;
-    [SerializeField] private float gravityMultiplier = 3.0f;
+    [SerializeField] private float gravityMultiplier;
     private float _velocity;
 
     #endregion
@@ -33,9 +37,25 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    [SerializeField] private TextMeshProUGUI textScore;
+    [SerializeField] private TextMeshProUGUI textTimer;
+
+    public TextToIntConverter converter;
+
+    private int scoreIncrement = 100;
+
+    private float jumpBuffTime = 0;
+    private float speedBuffTime = 0;
+
+    private bool isJumpBuffActive = false;
+    private bool isSpeedBuffActive = false;
+
+    private int trimScoreCount = "Очки: ".Length;
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
+        initialSpeed = speed;
+        initialGravityMultiplier = gravityMultiplier;
     }
 
 
@@ -45,6 +65,29 @@ public class PlayerController : MonoBehaviour
         ApplyGravity();
         ApplyRotation();
         ApplyMovement();
+        ApplyBuffs();
+    }
+
+    private void ApplyBuffs()
+    {
+        if (isJumpBuffActive)
+        {
+            jumpBuffTime += Time.deltaTime;
+        }
+        if (isSpeedBuffActive)
+        {
+            speedBuffTime += Time.deltaTime;
+        }
+        if (jumpBuffTime > 10)
+        {
+            isJumpBuffActive = false;
+            gravityMultiplier = initialGravityMultiplier;
+        }
+        if (speedBuffTime > 10)
+        {
+            isSpeedBuffActive = false;
+            speed = initialSpeed;
+        }
     }
 
     private void ApplyGravity()
@@ -92,4 +135,31 @@ public class PlayerController : MonoBehaviour
 
 
     private bool IsGrounded() => _characterController.isGrounded;
+
+    private void OnTriggerEnter(Collider collision)
+    {
+
+        if (collision.gameObject.tag == "ScoreBuff")
+        {
+            Destroy(collision.gameObject);
+
+            int score = int.Parse(textScore.text.Remove(0,trimScoreCount-1)) + scoreIncrement;
+            textScore.SetText("Очки: " + score.ToString());
+        }
+        if (collision.gameObject.tag == "JumpBuff")
+        {
+            Destroy(collision.gameObject);
+            isJumpBuffActive = true;
+            jumpBuffTime = 0;
+            gravityMultiplier = initialGravityMultiplier * 0.8f;
+           
+        }
+        if (collision.gameObject.tag == "SpeedBuff")
+        {
+            Destroy(collision.gameObject);
+            isSpeedBuffActive = true;
+            speedBuffTime = 0;
+            speed = initialSpeed * 1.4f;
+        }
+    }
 }

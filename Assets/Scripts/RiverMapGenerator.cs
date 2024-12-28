@@ -12,7 +12,9 @@ public class RiverMapGenerator : MonoBehaviour
     public List<GameObject> riverPrefabs;
     public GameObject riverWallsPrefab;
     public GameObject scoreBuffPrefab;
-    public int maxRiverCount = 10;
+    public GameObject speedBuffPrefab;
+    public GameObject jumpBuffPrefab;
+    public int maxRiverCount = 12;
 
 
     void Start()
@@ -65,7 +67,7 @@ public class RiverMapGenerator : MonoBehaviour
         }
         int randomIndex = UnityEngine.Random.Range(0, riverPrefabs.Count);
         GameObject  river = Instantiate(riverPrefabs[randomIndex], pos, Quaternion.identity);
-        CreateScoreBuffs(river);
+        CreateBuffs(river);
         river.transform.SetParent(transform);
 
         rivers.Add(river);
@@ -76,7 +78,7 @@ public class RiverMapGenerator : MonoBehaviour
 
         for (int i = 0; i < maxRiverCount; i++)
         {
-            Vector3 pos = Vector3.zero;
+            Vector3 pos = new Vector3(0, 0, -60f);
             if (riverWalls.Count > 0)
             {
                 pos = riverWalls[riverWalls.Count - 1].transform.position + new Vector3(0, 0, 30f);
@@ -87,7 +89,7 @@ public class RiverMapGenerator : MonoBehaviour
         }
     }
 
-    private void CreateScoreBuffs(GameObject river)
+    private void CreateBuffs(GameObject river)
     {
         List<GameObject> rafts = new List<GameObject>();
         for (int i = 0; i < river.transform.childCount; i++)
@@ -101,13 +103,19 @@ public class RiverMapGenerator : MonoBehaviour
            
         for(int i = 0; i < rafts.Count; i++)
         {
-            GameObject scoreBuff = null;
-            if (UnityEngine.Random.Range(0, 100) > 0)
-                scoreBuff = Instantiate(scoreBuffPrefab, rafts[i].transform.position, Quaternion.identity);
-            if (scoreBuff != null)  
+            GameObject raftBuff = null;
+            int random = UnityEngine.Random.Range(0, 100);
+            if (random >= 70)
+                raftBuff = Instantiate(scoreBuffPrefab, rafts[i].transform.position, Quaternion.identity);
+            else if (random >= 65 && random < 70)
+                raftBuff = Instantiate(jumpBuffPrefab, rafts[i].transform.position, Quaternion.identity);
+            else if (random >= 60 && random < 65)
+                raftBuff = Instantiate(speedBuffPrefab, rafts[i].transform.position, Quaternion.identity);
+
+            if (raftBuff != null)  
             {
-                scoreBuff.transform.SetParent(rafts[i].transform, false);
-                scoreBuff.transform.position = rafts[i].transform.position + buffOffset;
+                raftBuff.transform.SetParent(rafts[i].transform, false);
+                raftBuff.transform.position = rafts[i].transform.position + buffOffset;
             }
         }
 

@@ -19,6 +19,5 @@ public class Timer : MonoBehaviour
     {
         timeStart += Time.deltaTime;
         textTimer.SetText("Время: " + timeStart.ToString("F2"));
-        //textTimer.text = "Время: " + timeStart.ToString("F2");
     }
 }

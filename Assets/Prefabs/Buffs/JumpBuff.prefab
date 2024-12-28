@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3444820650802510201}
   m_Layer: 0
-  m_Name: ScoreBuff
+  m_Name: JumpBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2537090415347153408}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: ScoreBuff
+  m_TagString: JumpBuff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 353dd8e866385bf408237495005da579, type: 2}
+  - {fileID: 2100000, guid: b826738772e1760489e3542e225d30e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
