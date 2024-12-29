@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textScore;
     [SerializeField] private TextMeshProUGUI textTimer;
 
-    public TextToIntConverter converter;
+    [SerializeField] private GameObject jumpBuffIcon;
+    [SerializeField] private GameObject speedBuffIcon;
 
     private int scoreIncrement = 100;
 
@@ -82,11 +83,13 @@ public class PlayerController : MonoBehaviour
         {
             isJumpBuffActive = false;
             gravityMultiplier = initialGravityMultiplier;
+            jumpBuffIcon.SetActive(false);
         }
         if (speedBuffTime > 10)
         {
             isSpeedBuffActive = false;
             speed = initialSpeed;
+            speedBuffIcon.SetActive(false);
         }
     }
 
@@ -152,7 +155,7 @@ public class PlayerController : MonoBehaviour
             isJumpBuffActive = true;
             jumpBuffTime = 0;
             gravityMultiplier = initialGravityMultiplier * 0.8f;
-           
+            jumpBuffIcon.SetActive(true);          
         }
         if (collision.gameObject.tag == "SpeedBuff")
         {
@@ -160,6 +163,7 @@ public class PlayerController : MonoBehaviour
             isSpeedBuffActive = true;
             speedBuffTime = 0;
             speed = initialSpeed * 1.4f;
+            speedBuffIcon.SetActive(true);
         }
     }
 }
