@@ -52,11 +52,14 @@ public class PlayerController : MonoBehaviour
     private bool isSpeedBuffActive = false;
 
     private int trimScoreCount = "Очки: ".Length;
+
+    private Animator animator;
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
         initialSpeed = speed;
         initialGravityMultiplier = gravityMultiplier;
+        animator = GetComponentInChildren<Animator>();
     }
 
 
@@ -67,7 +70,9 @@ public class PlayerController : MonoBehaviour
         ApplyRotation();
         ApplyMovement();
         ApplyBuffs();
+        ApplyAnimation();
     }
+
 
     private void ApplyBuffs()
     {
@@ -119,6 +124,21 @@ public class PlayerController : MonoBehaviour
     private void ApplyMovement()
     {
         _characterController.Move(_direction * speed * Time.deltaTime);
+    }
+    private void ApplyAnimation()
+    {
+        if (!IsGrounded())
+        {
+            animator.Play("IdleCarry_Walk");
+        }
+        else if (_characterController.velocity.magnitude > 0.01f)
+        {
+            animator.Play("Walk");
+        }
+        else
+        {
+            animator.Play("Idle_Walk");
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
