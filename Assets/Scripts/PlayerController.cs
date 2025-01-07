@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -184,6 +184,12 @@ public class PlayerController : MonoBehaviour
             speedBuffTime = 0;
             speed = initialSpeed * 1.4f;
             speedBuffIcon.SetActive(true);
+        }
+
+        if (collision.gameObject.tag == "DeathZone")
+        {
+            Score.score = int.Parse(textScore.text.Remove(0, trimScoreCount - 1));
+            SceneManager.LoadScene("EnterUserName");
         }
     }
 }

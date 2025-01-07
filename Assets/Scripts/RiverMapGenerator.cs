@@ -28,7 +28,6 @@ public class RiverMapGenerator : MonoBehaviour
   
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -76,7 +75,7 @@ public class RiverMapGenerator : MonoBehaviour
     private void CreateRiverWalls()
     {
 
-        for (int i = 0; i < maxRiverCount; i++)
+        for (int i = 0; i < maxRiverCount+2; i++)
         {
             Vector3 pos = new Vector3(0, 0, -60f);
             if (riverWalls.Count > 0)

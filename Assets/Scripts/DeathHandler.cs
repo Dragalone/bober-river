@@ -1,11 +1,13 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DeathHandler : MonoBehaviour
 {
-
+    [SerializeField] private TextMeshProUGUI scoreText;
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); 
+        Score.score = int.Parse(scoreText.text);
+        SceneManager.LoadScene("EnterUserName"); 
     }
 }
